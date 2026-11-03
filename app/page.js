@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <main className="wrap">
-      <div className="hero"><h1>Company Services Form</h1><p>Fill in your details below — it only takes a minute.</p></div>
+      <div className="hero"><h1>Company Services Form</h1><p>Fill in your details below. It only takes a minute.</p></div>
       <form onSubmit={onSubmit}>
         <section className="card">
           <h2><span className="n">1</span>Company</h2>

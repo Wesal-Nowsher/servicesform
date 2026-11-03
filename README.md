@@ -2,8 +2,8 @@
 
 One-page, mobile-friendly company services form with an admin page. Built with Next.js + Neon Postgres, deploys on Vercel.
 
-- `/` — the form
-- `/admin` — password-protected list of all submissions (search + CSV export)
+- `/`: the form
+- `/admin`: password-protected list of all submissions (search + CSV export)
 
 ## Deploy on Vercel
 1. Import this repo in Vercel.
