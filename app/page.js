@@ -46,8 +46,8 @@ export default function Home() {
   return (
     <main className="wrap">
       <div className="hero"><h1>Company Services Form</h1><p>Fill in your details below. It only takes a minute.</p></div>
-      <form onSubmit={onSubmit}>
-        <section className="card">
+      <form onSubmit={onSubmit} className="card">
+        <section className="sec">
           <h2><span className="n">1</span>Company</h2>
           <div className="grid">
             <Field label="Company Name (English)" name="company_en" required placeholder="e.g. Al Noor Trading LLC" />
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="card">
+        <section className="sec">
           <h2><span className="n">2</span>Contact</h2>
           <div className="grid">
             <Field label="Contact Person" name="contact" required autoComplete="name" placeholder="Full name" />
@@ -66,7 +66,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="card">
+        <section className="sec">
           <h2><span className="n">3</span>Address</h2>
           <div className="grid">
             <div>
@@ -82,7 +82,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="card">
+        <section className="sec">
           <h2><span className="n">4</span>Services List</h2>
           <p className="hint">Add up to {MAX} services your company provides.</p>
           {services.map((s, i) => (
