@@ -14,7 +14,7 @@ function Field({ label, name, required, full, ...rest }) {
 }
 
 export default function Home() {
-  const [services, setServices] = useState([""]);
+  const [services, setServices] = useState(Array(MAX).fill(""));
   const [state, setState] = useState("idle");
   const [error, setError] = useState("");
 
@@ -39,7 +39,7 @@ export default function Home() {
       <div className="check">✓</div>
       <h1>Thank you!</h1>
       <p>Your details have been submitted successfully.</p>
-      <button className="small-btn" onClick={() => { setServices([""]); setState("idle"); }}>Submit another</button>
+      <button className="small-btn" onClick={() => { setServices(Array(MAX).fill("")); setState("idle"); }}>Submit another</button>
     </div></main>
   );
 
@@ -84,15 +84,12 @@ export default function Home() {
 
         <section className="sec">
           <h2><span className="n">4</span>Services List</h2>
-          <p className="hint">Add up to {MAX} services your company provides.</p>
+          <p className="hint">List up to {MAX} services your company provides.</p>
           {services.map((s, i) => (
             <div className="svc" key={i}>
-              <span className="idx">{i + 1}</span>
-              <input value={s} onChange={e => setSvc(i, e.target.value)} placeholder={`Service ${i + 1}`} aria-label={`Service ${i + 1}`} />
-              {services.length > 1 && <button type="button" className="icon-btn" aria-label="Remove" onClick={() => setServices(x => x.filter((_, j) => j !== i))}>✕</button>}
+                            <input value={s} onChange={e => setSvc(i, e.target.value)} placeholder={`Service ${i + 1}`} aria-label={`Service ${i + 1}`} />
             </div>
           ))}
-          <button type="button" className="add" disabled={services.length >= MAX} onClick={() => setServices(x => [...x, ""])}>+ Add service</button>
         </section>
 
         {error && <div className="msg err">{error}</div>}
